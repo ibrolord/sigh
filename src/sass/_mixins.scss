@@ -1,0 +1,12 @@
+@mixin break($args...) {
+    @if length($args)==1 {
+        @media (max-width: nth($list: $args, $n: 1)) {
+            @content;
+        }
+    }
+    @else {
+        @media (min-width: nth($list: $args, $n: 1)) and (max-width: nth($list: $args, $n: 2)) {
+            @content;
+        }
+    }
+}

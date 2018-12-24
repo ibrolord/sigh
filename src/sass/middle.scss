@@ -1,0 +1,383 @@
+@import "ezemmuo";
+@import "mixins";
+.practice {
+    height: 784px;
+    max-width: 1440px;
+    margin: 0 auto;
+    @include break(320px, 841px) {
+        height: fit-content;
+    }
+    .practice-sub-cont {
+        overflow: hidden;
+        max-width: 1440px;
+        width: 86%;
+        margin: 0 auto;
+        padding: 96px 7%;
+        .practice-left {
+            z-index: -1;
+            top: 24px;
+            left: -260px;
+        }
+        .left-container {
+            width: 720px;
+            margin: 0 0 0 8px;
+            min-height: 472px;
+            box-shadow: 10px 10px 40px rgba(#666666, 0.45);
+
+            @include break(320px, 840px) {
+                    display: none;
+                }
+            .display-content{
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                padding: 0 $fz-24;
+                .content {
+                margin: -500px auto 0;
+                width: 100%;
+                color: $white;
+                padding: $mega-fz;
+                &.active{
+                    background: rgba($white, 0.1);
+                    animation: slide-in 1s forwards;
+                }
+                @include break(841px, 989px) {
+                    &.immigration.active {
+                        padding: $default;
+                    }
+                }
+                h4 {
+                    font-size: $mega-fz;
+                }
+                 svg{
+                     margin: 0 0 0 8px;
+                     fill: $white;
+                        width: 48px;
+                        height: 32px;
+                    }
+                p {
+                    font-weight: $w-slim;
+                    font-size: $default;
+                    line-height: 23px;
+                    margin: 8px 0;
+                }
+                .list-container {
+                    margin: 16px 0 0;
+                    padding: 0;
+                    width: 100%;
+                }
+                ul {
+                    columns: 2 auto;
+                    li {
+                        padding: 6px 0;
+                        line-height: 1.1rem;
+                        font-weight: $w-slim;
+                        font-size: $default;
+                    }
+                }
+                .services-available {
+                    font-size: $micro-fz;
+                }
+                &.family_law {
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+                &.real_estate {
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+                &.wills_n_estate {
+                    ul {
+                        columns: 1 auto;
+                    }
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+                &.immigration {
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+
+                }
+
+            }
+        }
+
+
+            .overlay{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: rgba(black, 0.8);
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                @include break(841px, 989px) {
+                    min-height: 432px;
+                }
+            }
+            .lazy{
+                position: absolute;
+                z-index: -1;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+            }
+        }
+        .prac-content {
+            margin: 0 8px 0 0;
+             @include break(320px, 840px) {
+                    margin: 0;
+                }
+            .card-container {
+                display: none;
+                @include break(841px, 4000px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+                margin: 40px 0 0;
+                height: 200px;
+                width: 200px;
+                #immigration.active {
+                    width: 191px;
+                }
+            }
+            span {
+                cursor: pointer;
+                line-height: $fz-24;
+                width: 136px;
+                margin: $default 0;
+                font-size: $milli-fz;
+                &.active {
+                    background: linear-gradient(to right, #D7CB75 0%, #E0D376 50%, #C1B039 100%);
+                    margin: 0;
+                    border-radius: 4px;
+                    color: $white;
+                    width: fit-content;
+                    cursor: pointer;
+                    padding: $default $pico-fz;
+                    &.active::after {
+                        bottom: 0;
+                        width: 0;
+                        height: 0;
+                        background: transparent;
+                        transform: none;
+                    }
+                }
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    margin: 0 0;
+                    width: 32px;
+                    height: 3px;
+                    background-color: $gold;
+                    transform: translate(0, 4px);
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide-in{
+    100%{
+        margin: 0 auto;
+    }
+}
+
+.team {
+    min-height: 1360px;
+    max-width: 1440px;
+    margin: 0 auto;
+    @include break(320px, 767px) {
+        height: fit-content;
+    }
+    background: url("../assets/team.svg") no-repeat (center / cover);
+    .team-sub-cont {
+        max-width: 1440px;
+        width: 86%;
+        margin: 0 auto;
+        height: fit-content;
+        padding: 56px 7%;
+        .member-container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            grid-gap: 32px;
+            background: $white;
+            position: relative;
+            margin: 24px 0 0;
+            padding: 32px;
+            box-shadow: 4px 4px 40px rgba(#666666, 0.1);
+            @include break(320px,
+            767px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 48px 6%;
+            }
+            &.sheila {
+                grid-template-columns: 1fr 260px;
+            }
+            img {
+                width: 260px;
+                z-index: 2;
+                height: 432px;
+                @include break(320px,
+                767px) {
+                    height: 344px;
+                }
+                &.left {
+                    order: -1;
+                }
+                &.right {
+                    order: 1;
+                    @include break(320px,
+                    767px) {
+                        order: -1;
+                    }
+                }
+            }
+            .lazy{
+                left: 32px;
+            }
+            .lazy2{
+                right: 32px;
+            }
+            .lazy, .lazy2{
+                z-index: 1;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                position: absolute;
+                 @include break(320px,
+                767px) {
+                    left: 0;
+                    right: 0;
+                    margin: 48px auto;
+                }
+            }
+
+            section {
+
+                @include break(320px,
+                767px) {
+                    margin: $default 0 0;
+                }
+                span:not(.name) {
+                    font-size: $default;
+                    font-weight: 300;
+                }
+                .name {
+                    font-size: $kilo-fz;
+                    color: $h-col-1;
+                    font-weight: $w-bold;
+                }
+                .position {
+                    font-size: 18px;
+                    color: $span-col;
+                    text-transform: uppercase;
+                    font-weight: $w-bold;
+                    margin: 4px 0;
+                }
+                p {
+                    padding: 12px 0 0;
+                    color: $p-col-1;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    min-height: 720px;
+    max-width: 1440px;
+    margin: 0 auto;
+    @include break(320px,
+    767px) {
+        height: fit-content;
+    }
+    .contact-sub-cont {
+        max-width: 1440px;
+        width: 86%;
+        margin: 0 auto;
+        padding: 96px 7%;
+        .contact-card {
+            padding: $fz-48 7%;
+            width: 416px;
+            border-radius: $b-r-nom;
+            height: 440px;
+            transform: translate(10%, 0%);
+            @include break(320px,
+            1308px) {
+                transform: translate(0, 0);
+            }
+            background: rgba(66,
+            66,
+            66,
+            0.02);
+            box-shadow: 4px 4px 40px rgba(#666666,
+            0.14);
+            .address-head,
+            .contact-head {
+                padding: 0;
+                margin: $default 0;
+                color: #0E0E0E;
+                font-weight: 500;
+            }
+            .address-text {
+                color: $p-col-1;
+                font-weight: 300;
+                width: 240px;
+                text-transform: uppercase;
+            }
+            .contact-text {
+                padding: 4px 0;
+                font-weight: 300;
+                color: $p-col-1;
+                letter-spacing: 1px;
+            }
+        }
+        .map-cont{
+            background: white;
+            width: 552px;
+            height: 376px;
+              box-shadow: 4px 4px 40px rgba(#0E0E0E,
+            0.06);
+            transform: translate(-10%, 5%);
+             @include break(320px,
+            1308px) {
+                transform: translate(0%, 5%);
+            }
+            @include break(320px,
+            600px) {
+                height: 320px;
+                width: -webkit-fill-available;
+                img{
+                width: -webkit-fill-available;
+                }
+            }
+            img{
+                width: 90%;
+                height: 90%;
+            }
+      }
+        .to-left {
+            z-index: -3;
+            svg {
+                width: 100%;
+            }
+        }
+    }
+}

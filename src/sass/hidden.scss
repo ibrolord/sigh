@@ -1,0 +1,314 @@
+@import "ezemmuo";
+@import "mixins";
+.input-form-container {
+    display: none;
+    &.display {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        height: 504px;
+        z-index: 200;
+        width: 360px;
+        overflow: hidden;
+        background: $white;
+        box-shadow: 8px 8px 40px rgba(#666666, 0.14);
+        border-radius: $b-r-nom;
+        animation: slideWeb 0.4s forwards;
+         @include break(320px, 520px) {
+           animation: slideMobile 0.4s forwards;
+        }
+        @include break(521px, 767px){
+animation: slideTab 0.4s forwards;
+        }
+
+        @media screen and (max-width: 320px) and (max-height: 667px){
+            width: 280px;
+        }
+        .header {
+            border-top-left-radius: $b-r-nom;
+            border-top-right-radius: $b-r-nom;
+            width: -webkit-fill-available;
+            border-top: $b-r-nom;
+            padding: 1rem 1.5rem;
+            color: $white;
+            font-size: $milli-fz;
+            height: 80px;
+            background: $gold;
+        }
+        .cross {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                left: -5px;
+                top: 11px;
+                margin: 0;
+                width: 24px;
+                height: 2px;
+                background-color: $white;
+                transform: rotate(0);
+                transition: transform 0.25s ease-in-out;
+            }
+            &::before {
+                transform: rotate(-45deg) translate(4px, 4px);
+            }
+            &::after {
+                transform: rotate(45deg) translate(4px, -4px);
+            }
+        }
+        .input-container {
+            width: -webkit-fill-available;
+            background: $white;
+            padding: 1rem 1.5rem;
+            height: 100%;
+            overflow: hidden;
+
+    font-family: 'Montserrat', sans-serif;
+            form {
+                height: 100%;
+                textarea,
+                input {
+                    border: 1px solid rgba(97, 93, 93, 0.29);
+                    border-radius: $b-r;
+                    height: 32px;
+                    font-size: $nano-fz;
+                    outline: none;
+                    color: $p-col-1;
+                    padding: 0.5rem 0.7rem;
+                    background: rgba(195, 195, 195, 0.09);
+                    &.submit {
+                        background: $gold;
+                        color: $white;
+                        border-color: $gold;
+                    }
+                }
+                textarea {
+                    resize: none;
+                    font-size: $nano-fz;
+    font-family: 'Montserrat', sans-serif;
+                    height: 112px;
+                    overflow: hidden scroll;
+                }
+                .message {
+                    @extend input;
+                    height: 160px;
+                    resize: none;
+                    overflow: hidden scroll;
+                }
+            }
+        }
+    }
+}
+
+@keyframes slideWeb{
+    0%{
+    right: 0;
+    }
+    100%{
+        right: 7%
+    }
+}
+
+@keyframes slideTab{
+    0%{
+    right: 0;
+    }
+    100%{
+        right: 4%
+    }
+}
+
+@keyframes slideMobile{
+    0%{
+    transform: translateX(0)
+    }
+
+    100%{
+        transform: translateX(4%);
+        width: 92%;
+    }
+}
+/* FOOTER */
+
+.footer {
+    height: fit-content;
+     background: linear-gradient(to bottom, rgba(#31394E, 0.8) 0%, #31394E 100%), url("https://res.cloudinary.com/eze-mmuo/image/upload/c_scale,q_auto:eco/v1543884354/fort%20law/footer-bg.jpg") no-repeat (center / cover);
+    span {
+        cursor: pointer;
+        font-size: $fz-12;
+    }
+
+    .bottom-half {max-width: 1440px;
+    margin: 0 auto;
+
+        padding: 60px 7% 24px;
+        height: 200px;
+        min-height: fit-content;
+        width: 86%;
+        @include break(320px,
+        767px) {
+            padding: 0 0 32px;
+            width: 92%;
+            padding: 60px 4% 24px;
+        }
+        .footer-items {
+            border-bottom: 1px #D0D0D0 solid;
+    width: 100%;padding: 0 0 32px;
+
+        }
+        .copyright {
+            justify-content: flex-end;
+            width: 100%;
+            color: $gold;
+            font-size: $nano-fz;
+            right: 7%;
+            margin: $default 0 0;
+            @include break(320px,
+            767px) {
+                right: 4%;
+            }
+        }
+        .left {
+            margin: 12px 0;
+            p {
+                margin: 4px 0 0;
+                width: 240px;
+                color: $white;
+            }
+        }
+        #write-us{
+            background: linear-gradient(to right, #D7CB75 0%, #E0D376 50%, #C1B039 100%);
+
+                    border-radius: 4px;
+                    color: $white;
+                    cursor: pointer;
+                    padding: $default $fz-48;
+            margin: 16px 0 0;
+            position: relative;
+            width: fit-content;
+        }
+        .mid {
+            margin: 12px 8px;
+            min-height: 96px;
+            @include break(320px,
+            375px) {
+                margin: 12px 0;
+            }
+            p {
+                color: $gold;
+                font-size: $nano-fz;
+            }
+            a {
+                font-weight: 400;
+                color: $white;
+            }
+        }
+        .right {
+            margin: 12px 0;
+            p {
+                color: $gold;
+                font-size: $nano-fz;
+                margin: 0 0 6px;
+            }
+            .stay-IT {
+                .icons {
+                    width: 100px;
+                }
+            }
+        }
+    }
+}
+
+
+/* ACCORDION */
+
+.dropdown {
+    display: none;
+    margin: $default 0 0;
+    @include break(320px,
+    840px) {
+        display: block;
+    }
+    .accordion {
+        background: #f0f0f0;
+        height: auto;
+        line-height: 30px;
+        margin: 8px 0 0;
+        span,
+        p {
+            color: $white;
+            font-size: $default;
+        }
+        ul {
+            color: $white;
+            li {
+                font-size: $acc-li;
+            }
+        }
+        .acc-header {
+            font-size: $micro-fz;
+            padding-left: 10px;
+            height: 48px;
+            width: calc(100% - 10px);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            transition: transform .8s ease-in-out;
+            &.active{
+                transform: translateY(1px);
+                opacity: 1;
+            }
+
+            &.active:after {
+                content: '\2212';
+                border: solid 1px #7f7f7f;
+                color: #7f7f7f;
+            }
+            &::after {
+                content: '\002B';
+                font-size: $default;
+                position: absolute;
+                right: 10px;
+                height: 20px;
+                line-height: 23px;
+                display: flex;
+                justify-content: center;
+                width: 20px;
+                border: solid 1px $gold;
+                color: $gold;
+                border-radius: 50%;
+                transition: all 0.5s ease-in-out;
+
+            }
+        }
+        .acc-text {
+            opacity: 0;
+            transform: scaleY(0);
+            transform-origin: top;
+            background: $gold;
+            max-height:  0;
+            padding: 0 14px;
+            margin: 0 0 8px;
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out, opacity 1s ease-in-out, padding 0.4s ease-in-out, max-height 0.8s ease-in-out;
+            &.active {
+                opacity: 1;
+                padding: 8px 6px 8px 14px;
+                transform: scaleY(1);
+                margin: 0 0 16px;
+            }
+            span {
+                margin: 0;
+                width: 100%;
+                font-size: $micro-fz;
+            }
+            p {
+                font-size: $acc-li;
+            }
+        }
+    }
+}

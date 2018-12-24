@@ -1,0 +1,56 @@
+@import "ezemmuo";
+@import "mixins";
+.about {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: $bg-gold;
+    height: 800px;
+    @include break(320px, 767px) {
+        height: fit-content;
+    }
+    .about-sub-cont {
+        max-width: 1440px;
+        width: 86%;
+        margin: 0 auto;
+        padding: 36px 7%;
+        @include break(320px, 767px) {
+            img {
+                display: none;
+            }
+        }
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-gap: 24px;
+            min-height: fit-content;
+            position: relative;
+            img {
+                order: 1;
+                height: 480px;
+                width: 456px;
+                box-shadow: 10px 10px 40px rgba(#666666, 0.45);
+                @include break(768px, 1024px) {
+                    width: 296px;
+                    height: 320px;
+                }
+            }
+            .lazy{
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto 0;
+            }
+            section {
+                max-width: 736px;
+                p {
+                    padding: $default 0;
+                    color: $p-col-1;
+                    line-height: $fz-24;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+}

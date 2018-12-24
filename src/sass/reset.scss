@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import "ezemmuo";
+
+
+
+html {
+    background: rgba(251, 251, 251, 0.35);
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    position: relative;
+}
+
+
+.black {
+    font-size: $fz-48;
+    line-height: $fz-48;
+    color: $h-col-1;
+    position: relative;
+    margin: 0 0 72px;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -24px;
+        left: 0;
+        margin: 0;
+        width: 56px;
+        height: 8px;
+        background-color: $h-col-1;
+        transform: translate(0, 4px);
+    }
+}
+
+p {
+    line-height: $l-h-med;
+    overflow-wrap: break-word;
+}
+
+
+
+span {
+    width: fit-content;
+}
+
+img.main {
+  width: 100%;
+height: 100%;
+  display: block;
+  position: relative;
+
+}
+
+img:before {
+   content: " ";
+  display: block;
+
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+  border: 2px dotted rgb(200, 200, 200);
+}
+
+img:after {
+  content: "\1F517" " Broken Image of (" attr(alt) ")";
+ font-size: 16px;
+
+    font-style: normal;
+    font-family: FontAwesome;
+    color: #646464;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+top: -16px;
+    left: 2px;
+}
+
+img.logo:before{
+   left: -10px;
+    top: -9px;
+    width: 150%;
+    height: 130%;
+}
+
+img.logo:after{
+    content: "\1F517" attr(alt);
+    top: -53px;
+}
+
+img.logo{
+    height:44px;
+     width:44px
+}
+
+
+
+/*
+    DISPLAYs
+*/
+
+.d-flx {
+    display: flex;
+}
+
+.flx-w {
+    flex-wrap: wrap;
+}
+
+.d-flx-c {
+    @extend .d-flx;
+    flex-direction: column;
+}
+
+.j-c {
+    justify-content: center;
+}
+
+.j-s-b {
+    justify-content: space-between;
+}
+
+.j-s-a {
+    justify-content: space-around;
+}
+
+.a-i-c {
+    align-items: center;
+}
+
+.a-i-l {
+    align-items: flex-start;
+}
+
+.a-i-r {
+    align-items: flex-end;
+}
+
+.p-rel {
+    position: relative;
+}
+
+.p-abs-r {
+    position: absolute;
+    right: 0;
+}
+
+.p-abs-l {
+    position: absolute;
+    left: 0;
+}
+
+.p-abs {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.p-abs-100 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.csr {
+    cursor: pointer;
+}
+
+
+

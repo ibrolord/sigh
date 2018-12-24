@@ -1,0 +1,55 @@
+/*
+    site font-sizes
+*/
+
+:root {
+    font-size: 16px;
+}
+
+$pico-fz: 0.625rem;
+$fz-12: 0.75rem;
+$nano-fz: 0.8125rem;
+$default: 1rem;
+$micro-fz: 1.1875rem;
+$milli-fz: 1.375rem;
+$fz-24: 1.5rem;
+$kilo-fz: 1.75rem;
+$mega-fz: 2rem;
+$giga-fz: 2.3125rem;
+$tera-fz: 2.5rem;
+$fz-48: 3rem;
+$fz-56: 3.5rem;
+$acc-li: 0.85rem;
+
+/*
+    colors used and box-shadow
+*/
+
+$white: #FFFFFF;
+$gold: #D7CB75;
+$h-col-1: #090909;
+$h-col-2: #535461;
+$p-col-2: #444444;
+$p-col-1: #343434;
+$span-col: #666666;
+$bg-gold: rgba(215, 203, 117, 0.08);
+
+/*
+    font weight
+*/
+
+$w-slim: 100;
+$w-nom: 400;
+$w-bold: 500;
+$w-bolder: 600;
+
+/*
+    line height
+*/
+
+$l-h-nom: 16px;
+$l-h-med: 24px;
+// border radius
+$b-r: 4px;
+$b-r-nom: 8px;
+
